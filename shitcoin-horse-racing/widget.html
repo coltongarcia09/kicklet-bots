@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shitcoin Horse Racing Poll</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="popup-container" id="pollAlert">
+    <div class="popup-header">
+        <h2>Blokitos Bets: {{kicklet.getCounter('totalBetPoints')}}</h2>
+        <button class="close-btn" onclick="closePopup()">X</button>
+    </div>
+    <div class="poll-item">
+        <span class="poll-label">White:</span>
+        <span class="highlight">{{kicklet.getCounter('oddsWhite')}}%</span>
+        <div class="bar">
+            <div class="bar white-bar" :style="{width: `${kicklet.getCounter('oddsWhite')}%`}"></div>
+        </div>
+    </div>
+    <div class="poll-item">
+        <span class="poll-label">Blue:</span>
+        <span class="highlight">{{kicklet.getCounter('oddsBlue')}}%</span>
+        <div class="bar">
+            <div class="bar blue-bar" :style="{width: `${kicklet.getCounter('oddsBlue')}%`}"></div>
+        </div>
+    </div>
+    <div class="poll-item">
+        <span class="poll-label">Green:</span>
+        <span class="highlight">{{kicklet.getCounter('oddsGreen')}}%</span>
+        <div class="bar">
+            <div class=" bar green-bar" :style="{width: `${kicklet.getCounter('oddsGreen')}%`}"></div>
+        </div>
+    </div>
+    <div class="poll-item">
+        <span class="poll-label">Brown:</span>
+        <span class="highlight">{{kicklet.getCounter('oddsBrown')}}%</span>
+        <div class="bar">
+            <div class="bar brown-bar" id="brownBar" :style="{width: `${kicklet.getCounter('oddsBrown')}%`}"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function closePopup() {
+        document.getElementById("pollAlert").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Fetching odds values
+        var white = {{kicklet.getCounter('oddsWhite')}};
+        var blue = {{kicklet.getCounter('oddsBlue')}};
+        var green = {{kicklet.getCounter('oddsGreen')}};
+        var brown = {{kicklet.getCounter('oddsBrown')}};
+
+        // Setting the width of the bars
+        var fillWhite = document.querySelector('.white-bar');
+        if (fillWhite) fillWhite.style.width = white + '%';
+
+        var fillBlue = document.querySelector('.blue-bar');
+        if (fillBlue) fillBlue.style.width = blue + '%';
+
+        var fillGreen = document.querySelector('.green-bar');
+        if (fillGreen) fillGreen.style.width = green + '%';
+
+        var fillBrown = document.querySelector('.brown-bar');
+        if (fillBrown) fillBrown.style.width = brown + '%';
+    });
+</script>
+
+</body>
+</html>

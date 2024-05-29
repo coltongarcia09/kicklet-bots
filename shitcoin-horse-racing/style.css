@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('https://fonts.cdnfonts.com/s/24485/PressStart2P-Regular.woff') format('woff');
+}
+
+body {
+    background-image: url('images/bg.png');
+    font-family: 'PressStart2P', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: #425e40;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 #000;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup-header h2 {
+    font-size: 24px;
+    color: #ffd900;
+    text-shadow: 2px 2px #000;
+    margin: 0;
+}
+
+.close-btn {
+    background: #ff0000;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 28px;
+}
+
+.poll-item {
+    margin-bottom: 20px;
+}
+
+.poll-label {
+    display: inline-block;
+    width: 80px;
+    text-align: left;
+}
+
+.highlight {
+    color: #ffcc00;
+    font-size: 18px;
+}
+
+.bar {
+    height: 20px;
+    background-color: #444;
+    border: 2px solid #000;
+    position: relative;
+    margin-top: 5px;
+}
+
+.bar::after {
+    content: '';
+    display: block;
+    height: 20px;
+}
+
+.white-bar {
+    background-color: white;
+    border-right: 4px solid #000;
+}
+
+.blue-bar {
+    background-color: blue;
+    border-right: 4px solid #000;
+}
+
+.green-bar {
+    background-color: green;
+    border-right: 4px solid #000;
+}
+
+.brown-bar {
+    background-color: brown;
+    border-right: 4px solid #000;
+}
