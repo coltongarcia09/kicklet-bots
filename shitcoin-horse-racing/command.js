@@ -140,9 +140,7 @@ Brown: {{kicklet.GetCounter "oddsBrown"}}
         } else if (args.length == 2 && isInt(args[0]) && options.includes(args[1])) {
             if (bettingOpen) {
                 const bets = await getAllBets();
-                console.log(bets.length, $event.getSender());
-                {{/* const existingBet = bets.find(bet => bet.split(':')[0] === username); */}}
-                const existingBet = false;
+                const existingBet = bets.find(bet => bet.split(':')[0] === username);
                 if (existingBet) {
                     result = 'BET_ALREADY_PLACED';
                 } else {
@@ -267,5 +265,6 @@ Brown: {{kicklet.GetCounter "oddsBrown"}}
         Kicklet.setCounter('oddsBrown', 0);
         Kicklet.setCounter('totalBetPoints', 0);
     }
+
 
 </script>
