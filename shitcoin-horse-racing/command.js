@@ -268,5 +268,4 @@ Brown: {{kicklet.GetCounter "oddsBrown"}}
         Kicklet.setCounter('totalBetPoints', 0);
     }
 
-
 </script>
